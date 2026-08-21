@@ -15,7 +15,8 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+html { overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; max-width: 100vw; }
 
     /* --- NAVEGACIÓN --- */
     nav {
@@ -30,13 +31,13 @@
 
     /* --- SIDEBARS --- */
     .sidebar {
-      position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
+      position: fixed; top: 0; left: -100%; width: 85%; max-width: 320px; height: 100%;
       background: white; z-index: 1001; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex; flex-direction: column; box-shadow: 5px 0 15px rgba(0,0,0,0.1); padding: 40px 30px;
     }
     .sidebar.active { left: 0; }
     
-    #sidebar-cart { left: auto; right: -350px; width: 350px; }
+    #sidebar-cart { left: auto; right: -100%; width: 85%; max-width: 350px; }
     #sidebar-cart.active { right: 0; }
     
     .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
@@ -729,7 +730,7 @@ function filterCategory(cat) {
     //  INICIO
     function finalizarCompra() {
   if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
-  const numero = '5493513197839'; // ← reemplazá con tu número
+  const numero = '5493515459327'; // ← reemplazá con tu número
   let mensaje = '🛍️ Hola! Quiero hacer el siguiente pedido:\n\n';
   cart.forEach(item => {
     const talleLabel = item.talle === 'unico' ? 'Talle Único' : (item.talle ? `Talle ${item.talle}` : '');
